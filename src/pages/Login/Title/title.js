@@ -1,25 +1,25 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+//import Typography from '@material-ui/core/Typography';
 
-const Title = ({ text }) => {
+const Title = () => {
   return (
-    <div className='title-container'>
-      <label className='title-label'>
-        <Typography style={{
-          background:"purple",
-          fontSize:"20px",
-          textAlign:"center",
-          fontWeight: 'bold'
-
-        }}
+    <div className="title-container">
+      <label className="title-label">
+        <span
+          style={{
+            color:"blue",
+            fontSize: '30px',
+            textAlign: 'center',
+            fontWeight: 'bold',
+            padding:""
+          }}
         >
-          {text}
-        </Typography>
-
+          Hey ! <br />
+          Wellcome Bank
+        </span>
       </label>
-
     </div>
-  )
+  );
 };
 
 export default Title;

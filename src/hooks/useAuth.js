@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default () => {
-  const [token, setToken] = useState('Token Test');
+  const [token, setToken] = useState('');
 
   const hasToken = !!token;
 
