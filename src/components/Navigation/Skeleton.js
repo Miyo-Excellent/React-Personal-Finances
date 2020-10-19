@@ -32,16 +32,11 @@ const Skeleton = ({
     <Route key={routeKey.toString()} {...route} />
   ));
 
-  const order = `${proportionStart}/${proportionEnd}`;
+  const order = !!summary ? proportionStart : `${proportionStart}/${proportionEnd}`;
 
   const Menu = () => (!!appBar ? <NavBar>{appBar}</NavBar> : null);
 
-  const Resumen = () =>
-    !!summary ? (
-      <Summary>
-        <h1>Summary</h1>
-      </Summary>
-    ) : null;
+  const Resumen = () => (!!summary ? <Summary>{summary}</Summary> : null);
 
   if (!!withOutRouter) {
     return (
@@ -62,7 +57,7 @@ const Skeleton = ({
   return (
     <Router history={!!newHistory ? history : undefined}>
       <Layout container component={Paper}>
-        <Content order={order}>
+        <Content order={order} style={{ padding: 10 }}>
           <Switch>{routesComponents}</Switch>
         </Content>
       </Layout>
