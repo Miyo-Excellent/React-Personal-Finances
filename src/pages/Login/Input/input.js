@@ -2,11 +2,10 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Inputs} from 'components/Styled/styles';
 
-const Input = ({ attribute, handleChange, param }) => {
+// eslint-disable-next-line react/prop-types
+const Input = ({ attribute, handleChange }) => {
   return (
-    <Inputs
-
-    >
+    <Inputs>
       <TextField
         id={attribute.id}
         name={attribute.name}

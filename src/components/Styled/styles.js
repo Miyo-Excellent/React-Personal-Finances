@@ -6,7 +6,6 @@ export const Titles = styled.div`
   justify-content: flex-start;
   width: 300px;
   height: auto;
-  margin: 10px;
   padding: 0 10px;
   font-size: ${({ size = 12 }) => `${size}px`};
 `;
