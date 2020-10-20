@@ -3,15 +3,20 @@ import React from 'react';
 
 const Title = () => {
   return (
-    <div className="title-container">
+    <div
+      className="title-container"
+      style={{
+        padding: '40px 0',
+      }}
+    >
       <label className="title-label">
         <span
           style={{
-            color:"blue",
-            fontSize: '30px',
+            color: 'blue',
+            fontSize: '40px',
             textAlign: 'center',
             fontWeight: 'bold',
-            padding:""
+            padding: '20px 0',
           }}
         >
           Hey ! <br />

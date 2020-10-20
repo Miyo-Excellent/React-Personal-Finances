@@ -1,11 +1,9 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import { Titles } from '../../../components/Styled/styles';
 
-const Label = ({ text }) => {
+const Label = ({ text, size }) => {
   return (
-    <div>
-      <Typography>{text}</Typography>
-    </div>
+      <Titles size={size}>{text}</Titles>
   );
 };
 export default Label;
