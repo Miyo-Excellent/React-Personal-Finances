@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { isAlphanumeric } from 'validator';
 import { Button, Slide } from '@material-ui/core';
-import { Items } from '../../../components/Styled/styles';
+import { Items } from 'components/Styled/styles';
 import Title from '../Title/title';
 import Label from '../Label/label';
 import Input from '../Input/input';
@@ -10,13 +11,13 @@ const SignIn = ({ inLogin = false }) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
 
+  const hasUser = isAlphanumeric(user);
+  const hasPassword = isAlphanumeric(password);
+
   function handleChange(name, value) {
-    if (name === 'usuario') {
-      setUser(value);
-    } else if (value.length < 6) {
-    } else {
-      setPassword(value);
-    }
+    if (name === 'usuario') return setUser(value);
+    if (name === 'password') return setPassword(value);
+    return setPassword(value);
   }
 
   function handleSubmit() {
@@ -29,6 +30,7 @@ const SignIn = ({ inLogin = false }) => {
         <Title />
         <Label size={14} text="User name" />
         <Input
+          error={!hasUser}
           attribute={{
             id: 'usuario',
             name: 'usuario',
@@ -49,6 +51,7 @@ const SignIn = ({ inLogin = false }) => {
         />
 
         <Input
+          error={!hasPassword}
           attribute={{
             id: 'contraseña',
             name: 'contraseña',

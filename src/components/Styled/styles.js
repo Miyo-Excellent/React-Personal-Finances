@@ -6,7 +6,6 @@ export const Titles = styled.div`
   justify-content: flex-start;
   width: 300px;
   height: auto;
-  padding: 0 10px;
   font-size: ${({ size = 12 }) => `${size}px`};
 `;
 
@@ -68,6 +67,6 @@ export const Inputs = styled.div`
   justify-content: flex-start;
   width: 300px;
   height: auto;
-  margin: 10px;
+  margin: 0 0 10px 0;
   padding: 10px 0;
 `;

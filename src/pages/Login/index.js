@@ -11,7 +11,7 @@ import SignIn from './SignIn';
 
 const Login = () => {
   const [token, setToken, hasToken] = useAuth();
-  const [inLogin, setInLogin] = useState(false);
+  const [inLogin, setInLogin] = useState(true);
 
   if (hasToken) return <Redirect to="/dashboard" />;
 
@@ -30,9 +30,7 @@ const Login = () => {
         </Images>
       </Grid>
 
-      {/* Grid */}
       <Container style={{ width: '50%', height: '100%', overflow: 'hidden' }}>
-        {/* Grid Item */}
         <Nav>
           <Navbar setInLogin={setInLogin} />
         </Nav>

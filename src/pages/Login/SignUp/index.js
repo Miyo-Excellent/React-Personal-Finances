@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { isEmail, isAlphanumeric } from 'validator';
 import { Slide, Button } from '@material-ui/core';
-import { Items } from '../../../components/Styled/styles';
+import { Items } from 'components/Styled/styles';
 import Label from '../Label/label';
 import Input from '../Input/input';
 
 const SignUp = ({ inLogin = false }) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+
+  const hasEmail = isEmail(email);
+  const hasUser = isAlphanumeric(user);
+  const hasPassword = isAlphanumeric(password);
 
   function handleChange(name, value) {
-    if (name === 'usuario') {
-      setUser(value);
-    } else if (value.length < 6) {
-    } else {
-      setPassword(value);
-    }
+    if (name === 'usuario') return setUser(value);
+    if (name === 'Email') return setEmail(value);
+    if (name === 'password') return setPassword(value);
+
+    return setPassword(value);
   }
+
   function handleSubmit() {
     // const account = { user, password };
   }
@@ -38,8 +44,11 @@ const SignUp = ({ inLogin = false }) => {
         >
           REGISTRATE !
         </span>
+
         <Label size={14} text="Nombre" />
+
         <Input
+          error={!hasUser}
           attribute={{
             id: 'usuario',
             name: 'usuario',
@@ -48,8 +57,11 @@ const SignUp = ({ inLogin = false }) => {
           }}
           handleChange={handleChange}
         />
+
         <Label size={14} text="Apellido" />
+
         <Input
+          error={!hasUser}
           attribute={{
             id: 'surname',
             name: 'usuario',
@@ -60,7 +72,9 @@ const SignUp = ({ inLogin = false }) => {
         />
 
         <Label size={14} text="Email" />
+
         <Input
+          error={!hasEmail}
           attribute={{
             id: 'Email',
             name: 'Email',
@@ -81,11 +95,12 @@ const SignUp = ({ inLogin = false }) => {
         />
 
         <Input
+          error={!hasPassword}
           attribute={{
             id: 'contraseña',
             name: 'contraseña',
             type: 'password',
-            placeholder: 'ingrese su contraseña'
+            placeholder: 'ingrese su contraseña',
           }}
           handleChange={handleChange}
         />
