@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonGroup, Button } from '@material-ui/core';
-import { ItemsLogin } from 'components/Styled';
+import ItemsLogin from 'styled-components';
 
 const Navbar = ({ setInLogin }) => {
   return (

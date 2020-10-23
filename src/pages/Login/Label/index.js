@@ -1,5 +1,5 @@
 import React from 'react';
-import { Titles } from 'components/Styled';
+import Titles from 'components/Styled/Titles';
 
 const Label = ({ text, size }) => {
   return <Titles size={size}>{text}</Titles>;

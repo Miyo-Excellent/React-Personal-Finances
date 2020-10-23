@@ -9,7 +9,6 @@ const Page = ({ history = {}, match = {}, location = {} }) => {
 
   const asyncInit = async () => {
     // const route = _.find(routes, { path });
-
     // if (!!route) history.push(route.path);
   };
 

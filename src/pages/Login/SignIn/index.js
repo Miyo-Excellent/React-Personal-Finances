@@ -2,34 +2,21 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { isAlphanumeric } from 'validator';
 import { Button, Slide } from '@material-ui/core';
-import { Items } from 'components/Styled/styles';
+import { Items } from 'components/Styled';
+import { useSingIn } from 'hooks';
 import Title from '../Title/title';
 import Label from '../Label/label';
-import Input from '../Input/input';
+import Index from '../Input';
 
 const SignIn = ({ inLogin = false }) => {
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState('');
-
-  const hasUser = isAlphanumeric(user);
-  const hasPassword = isAlphanumeric(password);
-
-  function handleChange(name, value) {
-    if (name === 'usuario') return setUser(value);
-    if (name === 'password') return setPassword(value);
-    return setPassword(value);
-  }
-
-  function handleSubmit() {
-    //const account = { user, password };
-  }
+  const { hasUser, hasPassword, handleChange, handleSubmit } = useSingIn('');
 
   return (
     <Slide in={!inLogin} direction="right" mountOnEnter unmountOnExit timeout={750}>
       <Items>
         <Title />
         <Label size={14} text="User name" />
-        <Input
+        <Index
           error={!hasUser}
           attribute={{
             id: 'usuario',
@@ -50,7 +37,7 @@ const SignIn = ({ inLogin = false }) => {
           }}
         />
 
-        <Input
+        <Index
           error={!hasPassword}
           attribute={{
             id: 'contraseña',
@@ -72,7 +59,7 @@ const SignIn = ({ inLogin = false }) => {
             width: '300px',
           }}
         >
-          Ingresar
+          INGRESAR
         </Button>
       </Items>
     </Slide>

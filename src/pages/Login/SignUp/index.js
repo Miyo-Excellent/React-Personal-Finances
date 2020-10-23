@@ -1,31 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { isEmail, isAlphanumeric } from 'validator';
 import { Slide, Button } from '@material-ui/core';
-import { Items } from 'components/Styled/styles';
+import { Items } from 'components/Styled';
+import { useSignUp } from 'hooks';
 import Label from '../Label/label';
-import Input from '../Input/input';
+import Input from '../Input';
 
 const SignUp = ({ inLogin = false }) => {
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-
-  const hasEmail = isEmail(email);
-  const hasUser = isAlphanumeric(user);
-  const hasPassword = isAlphanumeric(password);
-
-  function handleChange(name, value) {
-    if (name === 'usuario') return setUser(value);
-    if (name === 'Email') return setEmail(value);
-    if (name === 'password') return setPassword(value);
-
-    return setPassword(value);
-  }
-
-  function handleSubmit() {
-    // const account = { user, password };
-  }
+  const { hasUser, hasPassword, hasEmail, handleChange, handleSubmit } = useSignUp('');
 
   return (
     <Slide in={inLogin} direction="left" mountOnEnter unmountOnExit timeout={750}>

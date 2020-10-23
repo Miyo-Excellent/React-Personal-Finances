@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Grid } from '@material-ui/core';
 import { Redirect } from 'react-router';
 import { useAuth } from 'hooks';
-import { Container, Nav, Images } from 'components/Styled/styles';
+import { Container, Nav, Images } from 'components/Styled';
 import imagen from 'assets/Images/unnamed.jpg';
 import Navbar from './Navbar/navbar';
 import SignUp from './SignUp';

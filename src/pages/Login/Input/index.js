@@ -1,8 +1,8 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { Inputs } from 'components/Styled/styles';
+import Inputs from 'components/Styled/Inputs';
 
-const Input = ({ attribute, handleChange, error = false }) => {
+const Index = ({ attribute, handleChange, error = false }) => {
   return (
     <Inputs>
       <TextField
@@ -17,4 +17,4 @@ const Input = ({ attribute, handleChange, error = false }) => {
   );
 };
 
-export default Input;
+export default Index;
