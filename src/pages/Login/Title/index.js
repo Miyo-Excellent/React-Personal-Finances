@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Title = () => {
+const Label = () => {
   return (
     <div
       className="title-container"
@@ -26,4 +26,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default Label;

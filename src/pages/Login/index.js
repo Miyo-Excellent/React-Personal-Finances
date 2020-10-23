@@ -1,25 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import propTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
 import { Redirect } from 'react-router';
 import { useAuth } from 'hooks';
-import Title from './Title/title';
-import Label from './Label/label';
-import Input from './Input/input';
-// import propTypes from 'prop-types';
+import { Container, Nav, Images } from 'components/Styled';
+import imagen from 'assets/Images/unnamed.jpg';
+import Navbar from './Navbar/navbar';
+import SignUp from './SignUp';
+import SignIn from './SignIn';
 
 const Login = () => {
   const [token, setToken, hasToken] = useAuth();
+  const [inLogin, setInLogin] = useState(true);
 
   if (hasToken) return <Redirect to="/dashboard" />;
 
   return (
-    <Grid container justify="center" alignItems="center">
-      <Grid item>
-        <Title text="soy un titulo" />
-        <Label text="usuario" />
-        <Input />
-        <Label text="contraseña" />
+    <Grid
+      container
+      justify="space-between"
+      alignItems="center"
+      style={{
+        minHeight: '100vh',
+      }}
+    >
+      <Grid item xs={12} sm={6} style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+        <Images>
+          <img src={imagen} alt="" />
+        </Images>
       </Grid>
+
+      <Container style={{ width: '50%', height: '100%', overflow: 'hidden' }}>
+        <Nav>
+          <Navbar setInLogin={setInLogin} />
+        </Nav>
+
+        <SignUp inLogin={inLogin} />
+
+        <SignIn inLogin={inLogin} />
+      </Container>
     </Grid>
   );
 };
