@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { isAlphanumeric } from 'validator';
 import { Button, Slide } from '@material-ui/core';
 import { Items } from 'components/Styled';
 import { useSingIn } from 'hooks';
-import Title from '../Title/title';
-import Label from '../Label/label';
+import Title from '../Title';
+import Label from '../Label';
 import Index from '../Input';
 
 const SignIn = ({ inLogin = false }) => {
   const { hasUser, hasPassword, handleChange, handleSubmit } = useSingIn('');
 
   return (
-    <Slide in={!inLogin} direction="right" mountOnEnter unmountOnExit timeout={750}>
+    <Slide
+      in={!inLogin}
+      direction="right"
+      mountOnEnter
+      unmountOnExit
+      timeout={750}
+    >
       <Items>
         <Title />
         <Label size={14} text="User name" />

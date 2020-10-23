@@ -9,7 +9,13 @@ import { Navigation } from 'components/Navigation';
 
 import { root as routes } from 'routes';
 
+// import { numeralConfig } from 'utils';
+
 import { custom as theme } from 'theme';
+
+import 'styles/global.scss';
+
+// numeralConfig();
 
 const App = () => (
   <CustomResetCss>
@@ -18,8 +24,13 @@ const App = () => (
 
       <CssBaseline />
 
-      <Container maxWidth="xl" style={{ padding: 10 }}>
-        <Grid container justify="center" alignItems="center">
+      <Container maxWidth="xl" style={{ padding: 0, margin: 0, height: '100%' }}>
+        <Grid
+          container
+          justify="center"
+          alignItems="center"
+          style={{ padding: 0, margin: 0, height: '100%' }}
+        >
           <Navigation routes={routes} />
         </Grid>
       </Container>

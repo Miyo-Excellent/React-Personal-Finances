@@ -3,43 +3,40 @@ import React, { useState } from 'react';
 import { Grid } from '@material-ui/core';
 import { Redirect } from 'react-router';
 import { useAuth } from 'hooks';
-import { Container, Nav, Images } from 'components/Styled';
+import { Container, Nav, Image } from 'components/Styled';
 import imagen from 'assets/Images/unnamed.jpg';
-import Navbar from './Navbar/navbar';
+
+import Navbar from './Navbar';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
+import Layout from './Layout';
+import Right from './Right';
 
 const Login = () => {
-  const [token, setToken, hasToken] = useAuth();
   const [inLogin, setInLogin] = useState(true);
+
+  const { data: token, setData: setToken, hasData: hasToken } = useAuth();
 
   if (hasToken) return <Redirect to="/dashboard" />;
 
   return (
-    <Grid
-      container
-      justify="space-between"
-      alignItems="center"
-      style={{
-        minHeight: '100vh',
-      }}
-    >
-      <Grid item xs={12} sm={6} style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-        <Images>
-          <img src={imagen} alt="" />
-        </Images>
+    <Layout>
+      <Grid>
+        <Image src={imagen} alt="" style={{ objectFit: 'cover' }} />
       </Grid>
 
-      <Container style={{ width: '50%', height: '100%', overflow: 'hidden' }}>
+      <Container>
         <Nav>
           <Navbar setInLogin={setInLogin} />
         </Nav>
 
-        <SignUp inLogin={inLogin} />
+        <Right>
+          <SignUp inLogin={inLogin} />
 
-        <SignIn inLogin={inLogin} />
+          <SignIn inLogin={inLogin} />
+        </Right>
       </Container>
-    </Grid>
+    </Layout>
   );
 };
 

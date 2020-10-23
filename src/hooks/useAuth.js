@@ -1,11 +1,20 @@
 import { useEffect, useState } from 'react';
+import { TOKEN } from 'config';
 
+/**
+ *
+ * @returns {Object<{
+ *  data {String}
+ *  hasData {Boolean}
+ *  setData {Function<({String})>}
+ * >}
+ */
 export default () => {
-  const [token, setToken] = useState('');
+  const [data, setData] = useState(TOKEN);
 
-  const hasToken = !!token;
+  const hasData = !!data;
 
   useEffect(() => {}, []);
 
-  return [token, setToken, hasToken];
+  return { data, setData, hasData };
 };

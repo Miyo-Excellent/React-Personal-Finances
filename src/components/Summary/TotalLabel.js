@@ -1,12 +1,10 @@
 import styled from 'styled-components';
+import { Grid } from '@material-ui/core';
 
-const Images = styled.div`
-  background: blue;
-  width: 100%;
-  height: 100%;
+export default styled(Grid)`
   display: flex;
   justify-content: center;
   align-items: center;
+  grid-column: 2;
+  grid-row: 1;
 `;
-
-export default Images;

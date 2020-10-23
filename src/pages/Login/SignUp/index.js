@@ -3,14 +3,20 @@ import PropTypes from 'prop-types';
 import { Slide, Button } from '@material-ui/core';
 import { Items } from 'components/Styled';
 import { useSignUp } from 'hooks';
-import Label from '../Label/label';
+import Label from '../Label';
 import Input from '../Input';
 
 const SignUp = ({ inLogin = false }) => {
   const { hasUser, hasPassword, hasEmail, handleChange, handleSubmit } = useSignUp('');
 
   return (
-    <Slide in={inLogin} direction="left" mountOnEnter unmountOnExit timeout={750}>
+    <Slide
+      in={inLogin}
+      direction="left"
+      mountOnEnter
+      unmountOnExit
+      timeout={750}
+    >
       <Items>
         <span
           style={{
