@@ -1,11 +1,19 @@
 import { useEffect, useState } from 'react';
 
+/**
+ *
+ * @returns {Object<{
+ *  data {String}
+ *  hasData {Boolean}
+ *  setData {Function<({String})>}
+ * >}
+ */
 export default () => {
-  const [token, setToken] = useState('Token Test');
+  const [data, setData] = useState('Token Test');
 
-  const hasToken = !!token;
+  const hasData = !!data;
 
   useEffect(() => {}, []);
 
-  return [token, setToken, hasToken];
+  return { data, setData, hasData };
 };

@@ -1,11 +1,10 @@
-import React from 'react';
 import { Contact, Home, Product, Products, Shopping } from 'pages';
 
 export default [
   {
     path: '/dashboard',
-    name: 'Home',
-    component: (props) => <Home {...props} />,
+    name: 'Resumen',
+    component: Home,
     exact: true,
     strict: true,
     sensitive: false,
@@ -14,7 +13,7 @@ export default [
   {
     path: '/dashboard/contact',
     name: 'Contact',
-    component: (props) => <Contact {...props} />,
+    component: Contact,
     exact: true,
     strict: true,
     sensitive: false,
@@ -23,7 +22,7 @@ export default [
   {
     path: '/dashboard/shopping',
     name: 'Shopping',
-    component: (props) => <Shopping {...props} />,
+    component: Shopping,
     exact: true,
     strict: true,
     sensitive: false,
@@ -32,7 +31,7 @@ export default [
   {
     path: '/dashboard/products',
     name: 'Products',
-    component: (props) => <Products {...props} />,
+    component: Products,
     exact: true,
     strict: true,
     sensitive: false,
@@ -41,7 +40,7 @@ export default [
   {
     path: '/dashboard/product/:id',
     name: 'Product',
-    component: (props) => <Product {...props} />,
+    component: Product,
     exact: true,
     strict: true,
     sensitive: false,

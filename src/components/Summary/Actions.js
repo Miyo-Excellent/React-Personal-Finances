@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Action from './Action';
 
 /**
@@ -13,13 +13,14 @@ const Actions = ({ data = [] }) => (
   <Grid
     container
     item
-    component={Paper}
     xs={12}
     ms={12}
     lg={12}
     xl={12}
     direction="row"
     wrap="nowrap"
+    justify="center"
+    alignItems="center"
   >
     {data.map((action = {}, index = 0) => (
       <Action data={action} key={index.toString()} />

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Redirect, withRouter } from 'react-router';
 
-import useAuth from 'hooks/useAuth';
+import { useAuth } from 'hooks';
 
 const Auth = () => {
-  const [token, setToken, hasToken] = useAuth();
+  const { token, setToken, hasToken } = useAuth();
 
   if (!hasToken) return <Redirect to="/login" />;
 

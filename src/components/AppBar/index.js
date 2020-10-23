@@ -1,42 +1,54 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import styled from 'styled-components';
-import { AppBar as MaterialAppBar, Grid, Toolbar } from '@material-ui/core';
+import { find } from 'lodash';
+import { withRouter } from 'react-router';
+import { Grid, Toolbar } from '@material-ui/core';
+import { useNavigationLocationPathname } from 'hooks';
 import Button from './Button';
+import customMaterialAppBar from './CustomMaterialAppBar';
 
-const CustomMaterialAppBar = styled(MaterialAppBar)`
-  background: white !important;
+export const CustomMaterialAppBar = customMaterialAppBar;
 
-  &,
-  & > * {
-    height: 100% !important;
-    width: 100% !important;
+const AppBar = ({ location = {}, history = {}, routes = [] }) => {
+  const { data: path, setData: setPath, hasData: hasPath } = useNavigationLocationPathname(
+    location,
+  );
 
-    & > * {
-      height: 100% !important;
-      width: 100% !important;
-      flex-direction: column !important;
-      flex-wrap: nowrap !important;
-      padding: 0 !important;
-    }
-  }
-`;
+  const route = find(routes, { path });
 
-const AppBar = ({ routes = [], onChangePage = async () => null }) => (
-  <CustomMaterialAppBar position="static" elevation={3}>
-    <Toolbar orientation="vertical">
-      <Grid container alignItems="center" justify="center">
-        {routes
-          .filter((route) => !!route.showOnAppBar)
-          .map((route, routeKey) => (
-            <Grid key={routeKey.toString()} item>
-              <Button onClick={() => onChangePage(route)}>{route.name}</Button>
-            </Grid>
-          ))}
-      </Grid>
-    </Toolbar>
-  </CustomMaterialAppBar>
-);
+  const onChangePage = async (nextRoute = {}) => history.push(nextRoute.path);
+
+  return (
+    <CustomMaterialAppBar position="static" elevation={3}>
+      <Toolbar orientation="vertical">
+        <Grid container alignItems="stretch" justify="flex-start">
+          {!!path &&
+            !!route &&
+            routes
+              .filter((__route__) => !!__route__.showOnAppBar)
+              .map((__route__, routeKey) => (
+                <Grid
+                  key={routeKey.toString()}
+                  item
+                  style={{
+                    padding: '0 5px',
+                    margin: routeKey === 0 ? '5px 0 0 0' : 0,
+                  }}
+                >
+                  <Button
+                    fullWidth
+                    active={__route__.path === route.path}
+                    onClick={() => onChangePage(__route__)}
+                  >
+                    {__route__.name}
+                  </Button>
+                </Grid>
+              ))}
+        </Grid>
+      </Toolbar>
+    </CustomMaterialAppBar>
+  );
+};
 
 AppBar.defaultProps = {
   // title: '',
@@ -45,9 +57,9 @@ AppBar.defaultProps = {
 AppBar.propTypes = {
   // title: propTypes.string,
   routes: propTypes.arrayOf(propTypes.object).isRequired,
-  onChangePage: propTypes.func.isRequired,
+  location: propTypes.objectOf(propTypes.object).isRequired,
 };
 
 export { AppBar, Button };
 
-export default AppBar;
+export default withRouter(AppBar);

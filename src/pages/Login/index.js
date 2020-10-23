@@ -8,7 +8,7 @@ import Input from './Input/input';
 // import propTypes from 'prop-types';
 
 const Login = () => {
-  const [token, setToken, hasToken] = useAuth();
+  const { data: token, setData: setToken, hasData: hasToken } = useAuth();
 
   if (hasToken) return <Redirect to="/dashboard" />;
 

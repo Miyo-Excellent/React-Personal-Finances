@@ -36,7 +36,7 @@ const Action = ({ data = {} }) => (
 Action.defaultProps = {};
 
 Action.propTypes = {
-  data: PropTypes.objectOf(PropTypes.object).isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default Action;

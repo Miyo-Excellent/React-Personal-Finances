@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid } from '@material-ui/core';
 
-const NavBar = styled.div`
+const NavBar = styled(Grid)`
+  min-width: 200px;
   grid-column: ${({ order = 1 }) => order};
   grid-row: 1;
 `;

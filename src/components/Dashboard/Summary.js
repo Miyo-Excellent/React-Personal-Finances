@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid } from '@material-ui/core';
 
-const Summary = styled.div`
+const Summary = styled(Grid)`
   grid-column: ${({ order = 3 }) => order};
   grid-row: 1;
 `;
