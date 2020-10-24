@@ -25,7 +25,7 @@ const MonthsSlider = ({
       <PrettoSlider
         marks
         aria-labelledby="discrete-slider"
-        // valueLabelDisplay="auto"
+        valueLabelDisplay="auto"
         min={min}
         step={step}
         max={max}

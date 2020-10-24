@@ -1,10 +1,10 @@
 import Auth from './Auth';
 import Home from './Home';
-import Contact from './Contact';
-import Shopping from './Shopping';
+import Details from './Details';
+import Calendar from './Calendar';
 import Product from './Product';
-import Products from './Products';
+import Settings from './Settings';
 import Page404 from './Page404';
 import Login from './Login';
 
-export { Auth, Home, Contact, Shopping, Product, Products, Page404, Login };
+export { Auth, Home, Details, Calendar, Product, Settings, Page404, Login };

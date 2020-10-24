@@ -24,7 +24,7 @@ const App = () => (
 
       <CssBaseline />
 
-      <Container maxWidth="xl" style={{ padding: 0, margin: 0, height: '100%' }}>
+      <Container maxWidth="xl" style={{ padding: 0, margin: '0 auto', height: '100%' }}>
         <Grid
           container
           justify="center"

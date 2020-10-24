@@ -1,4 +1,4 @@
-import { Contact, Home, Product, Products, Shopping } from 'pages';
+import { Details, Home, Product, Settings, Calendar } from 'pages';
 
 export default [
   {
@@ -11,27 +11,27 @@ export default [
     showOnAppBar: true,
   },
   {
-    path: '/dashboard/contact',
-    name: 'Contact',
-    component: Contact,
+    path: '/dashboard/details',
+    name: 'Detalles',
+    component: Details,
     exact: true,
     strict: true,
     sensitive: false,
     showOnAppBar: true,
   },
   {
-    path: '/dashboard/shopping',
-    name: 'Shopping',
-    component: Shopping,
+    path: '/dashboard/calendar',
+    name: 'Calendario',
+    component: Calendar,
     exact: true,
     strict: true,
     sensitive: false,
     showOnAppBar: true,
   },
   {
-    path: '/dashboard/products',
-    name: 'Products',
-    component: Products,
+    path: '/dashboard/settings',
+    name: 'Configuraciones',
+    component: Settings,
     exact: true,
     strict: true,
     sensitive: false,
