@@ -4,7 +4,13 @@ Este proyecto fue iniciado con [Create React App](https://github.com/facebook/cr
  - [Git FLow](https://danielkummer.github.io/git-flow-cheatsheet/index.es_ES.html).
    - Aprender [más](https://aprendegit.com/que-es-git-flow/).
  - [Enzyme](https://enzymejs.github.io/enzyme/).
+ - [Lodash](https://lodash.com/docs).
+ - [Moment](https://momentjs.com/docs/).
  - [Material UI](https://material-ui.com/).
+ - [React Google Charts](https://react-google-charts.com/).
+ - [react Big Calendar](https://www.npmjs.com/package/react-big-calendar).
+ - [Numeral](http://numeraljs.com/).
+ - [sweetAlert2](https://sweetalert2.github.io/).
 
 ## Scripts Disponibles
 
